@@ -1,13 +1,17 @@
 {
-    "name": "otis22/php-skeleton",
-    "description": "Php skeleton for small packages with most important qaulity ",
+    "name": "otis22/vetmanager-botman-converstions",
+    "description": "Botman conversations for working with vetmanager",
     "license": "MIT",
     "authors": [
         {
-            "name": "otis",
+            "name": "otis22",
             "email": "vromanichev24@gmail.com"
         }
     ],
+    "require": {
+        "otis22/vetmanager-url": "^0.3.2",
+        "otis22/vetmanager-token": "^0.2.1"
+    },
     "require-dev": {
         "phpunit/phpunit": "^9.1",
         "phpstan/phpstan": "^0.12.19",
@@ -15,21 +19,23 @@
         "otis22/php-coverage-checker": "^1.2",
         "sensiolabs/security-checker": "^6.0",
         "wapmorgan/php-deprecation-detector": "^2.0",
-        "php-coveralls/php-coveralls": "^2.2"
+        "php-coveralls/php-coveralls": "^2.2",
+        "botman/botman": "^2.6",
+        "botman/studio-addons": "^1.6"
     },
     "autoload": {
         "psr-4": {
-            "Otis22\\PhpSkeleton\\": "src"
+            "Otis22\\VetmanagerConversations\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Otis22\\PhpSkeleton\\": "tests"
+            "Otis22\\VetmanagerConversations\\": "tests"
         }
     },
     "scripts": {
         "unit": "vendor/bin/phpunit",
-        "coverage": "vendor/bin/php-coverage-checker build/logs/clover.xml 100",
+        "coverage": "vendor/bin/php-coverage-checker build/logs/clover.xml 0",
         "static-analyze": "vendor/bin/phpstan analyse --level=max src tests &&  vendor/bin/phpdd tests src",
         "style": "vendor/bin/phpcs --ignore-annotations --standard=PSR12 src tests",
         "security": "vendor/bin/security-checker security:check",

@@ -4,7 +4,7 @@ ifndef PHP_VERSION
 	php_version:=$(default_php_version)
 endif
 base_dir:=$(shell basename $(CURDIR))
-docker:=docker run --rm -v $(CURDIR):/app -w /app $(base_dir):$(php_version)
+docker:=docker run --env-file=.env --rm -v $(CURDIR):/app -w /app $(base_dir):$(php_version)
 
 build:
 	docker build --build-arg VERSION=$(php_version) --tag $(base_dir):$(php_version) ./docker/
@@ -33,6 +33,6 @@ unit:
 coverage:
 	$(docker) composer coverage
 
-all: build install security style static-analyze unit coverage
+all: build install security style static-analyze unit
 
 .PHONY: build
