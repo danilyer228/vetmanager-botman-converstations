@@ -10,7 +10,8 @@
     ],
     "require": {
         "otis22/vetmanager-url": "^0.3.2",
-        "otis22/vetmanager-token": "^0.2.1"
+        "otis22/vetmanager-token": "^0.2.1",
+        "otis22/vetmanager-rest-api": "^0.1"
     },
     "require-dev": {
         "phpunit/phpunit": "^9.1",

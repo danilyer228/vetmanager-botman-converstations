@@ -4,8 +4,65 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cff109fc021e17fed4d2432f7fd1f17f",
+    "content-hash": "3db7aecee72f581ee25b527d2ff0e6b5",
     "packages": [
+        {
+            "name": "elegant-bro/arrayee",
+            "version": "0.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/elegant-bro/arrayee.git",
+                "reference": "a9d6086c16130e2482696a04938e9610d9b5657a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/elegant-bro/arrayee/zipball/a9d6086c16130e2482696a04938e9610d9b5657a",
+                "reference": "a9d6086c16130e2482696a04938e9610d9b5657a",
+                "shasum": ""
+            },
+            "require": {
+                "elegant-bro/interfaces": "^1.0",
+                "ext-json": "*",
+                "php": ">=7.1"
+            },
+            "require-dev": {
+                "ext-simplexml": "*",
+                "phpunit/phpunit": "^5.7 || ^6.4 || ^7.0",
+                "symfony/cache": "4.3.8",
+                "symfony/http-foundation": "4.3.8",
+                "symfony/mime": "4.3.8",
+                "symplify/easy-coding-standard": "^6.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "ElegantBro\\Arrayee\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Pavel Stepanets",
+                    "email": "pahhan.ne@gmail.com"
+                },
+                {
+                    "name": "Dmitry Anikeev",
+                    "email": "anikeev.dmitry@outlook.com"
+                },
+                {
+                    "name": "Artem Dekhtyar",
+                    "email": "m@artemd.ru"
+                }
+            ],
+            "support": {
+                "issues": "https://github.com/elegant-bro/arrayee/issues",
+                "source": "https://github.com/elegant-bro/arrayee/tree/0.1.2"
+            },
+            "time": "2020-12-18T09:07:12+00:00"
+        },
         {
             "name": "elegant-bro/interfaces",
             "version": "1.1.1",
@@ -47,6 +104,62 @@
                 "source": "https://github.com/elegant-bro/interfaces/tree/1.1.1"
             },
             "time": "2020-12-08T05:29:18+00:00"
+        },
+        {
+            "name": "elegant-bro/stringify",
+            "version": "0.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/elegant-bro/stringify.git",
+                "reference": "a2977316bb77a9e200db28708002475751548b28"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/elegant-bro/stringify/zipball/a2977316bb77a9e200db28708002475751548b28",
+                "reference": "a2977316bb77a9e200db28708002475751548b28",
+                "shasum": ""
+            },
+            "require": {
+                "elegant-bro/interfaces": "^1.0.0",
+                "ext-json": "*",
+                "php": "^7.1"
+            },
+            "require-dev": {
+                "ext-simplexml": "*",
+                "phpunit/phpunit": "^5.7 || ^6.4 || ^7.0",
+                "symfony/cache": "4.3.8",
+                "symfony/http-foundation": "4.3.8",
+                "symfony/mime": "4.3.8",
+                "symplify/easy-coding-standard": "^6.0"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/functions.php"
+                ],
+                "psr-4": {
+                    "ElegantBro\\Stringify\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Pavel Stepanets",
+                    "email": "pahhan.ne@gmail.com"
+                },
+                {
+                    "name": "Dmitry Anikeev",
+                    "email": "anikeev.dmitry@outlook.com"
+                }
+            ],
+            "support": {
+                "issues": "https://github.com/elegant-bro/stringify/issues",
+                "source": "https://github.com/elegant-bro/stringify/tree/0.3.1"
+            },
+            "time": "2020-08-03T15:54:45+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -323,6 +436,66 @@
                 "source": "https://github.com/otis22/php-interfaces/tree/1.1"
             },
             "time": "2020-12-02T15:21:30+00:00"
+        },
+        {
+            "name": "otis22/vetmanager-rest-api",
+            "version": "0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/otis22/vetmanager-rest-api.git",
+                "reference": "4eda29bcc13ac285118679e2ab7a4c8c67bb0068"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/otis22/vetmanager-rest-api/zipball/4eda29bcc13ac285118679e2ab7a4c8c67bb0068",
+                "reference": "4eda29bcc13ac285118679e2ab7a4c8c67bb0068",
+                "shasum": ""
+            },
+            "require": {
+                "elegant-bro/arrayee": "^0.1.0",
+                "elegant-bro/interfaces": "^1.1",
+                "elegant-bro/stringify": "^0.3.1",
+                "ext-json": "*",
+                "guzzlehttp/guzzle": "^7.1",
+                "otis22/php-interfaces": "^1.1",
+                "otis22/vetmanager-token": "^0.2.0",
+                "otis22/vetmanager-url": "^0.3.0"
+            },
+            "require-dev": {
+                "otis22/php-coverage-checker": "^1.2",
+                "php-coveralls/php-coveralls": "^2.2",
+                "phpstan/phpstan": "^0.12.19",
+                "phpunit/phpcov": "^8.0",
+                "phpunit/phpunit": "^9.1",
+                "sensiolabs/security-checker": "^6.0",
+                "squizlabs/php_codesniffer": "3.*",
+                "wapmorgan/php-deprecation-detector": "^2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Otis22\\VetmanagerRestApi\\": "src"
+                },
+                "files": [
+                    "src/functions.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "otis22",
+                    "email": "vromanichev24@gmail.com"
+                }
+            ],
+            "description": "Vetmanager - CRM for veterinary. This is library for conveniently work with Vetmanager REST API.",
+            "support": {
+                "issues": "https://github.com/otis22/vetmanager-rest-api/issues",
+                "source": "https://github.com/otis22/vetmanager-rest-api/tree/0.1.0"
+            },
+            "time": "2021-01-04T09:43:43+00:00"
         },
         {
             "name": "otis22/vetmanager-token",
