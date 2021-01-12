@@ -1,6 +1,6 @@
 <?php
 
-namespace Otis22\VetmanagerConversations\Schedules;
+namespace Otis22\VetmanagerConversations\Helpers;
 
 use GuzzleHttp\Client;
 use PHPUnit\Framework\TestCase;

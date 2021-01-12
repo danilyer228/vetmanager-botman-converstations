@@ -1,6 +1,6 @@
 <?php
 
-namespace Otis22\VetmanagerConversations\Schedules;
+namespace Otis22\VetmanagerConversations\Helpers;
 
 use GuzzleHttp\Client;
 use Otis22\VetmanagerToken\Token;
@@ -13,7 +13,7 @@ use Otis22\VetmanagerRestApi\Query\Filters;
 
 use function Otis22\VetmanagerRestApi\uri;
 
-class Schedules
+class Users
 {
     /**
      * @var Token
@@ -36,42 +36,34 @@ class Schedules
     }
 
     /**
-     * @param int $days
-     * @param int $doctor_id
-     * @param int $clinic_id
      * @return array{success:bool}
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function byIntervalInDays($days = 7, $doctor_id = 0, $clinic_id = 0): array
+    public function all(): array
     {
-        $now = date("Y-m-d");
-        $filteringParams[] = new MoreThan(
-            new Property('begin_datetime'),
-            new StringValue($now . " 00:00:00")
-        );
-        $filteringParams[] = new LessThan(
-            new Property('end_datetime'),
-            new StringValue(date('Y-m-d', intval(strtotime($now . " +" . $days . " days"))) . " 23:59:59")
-        );
-        if ($doctor_id) {
-            $filteringParams[] = new EqualTo(
-                new Property('doctor_id'),
-                new StringValue(strval($doctor_id))
-            );
-        }
-        if ($clinic_id) {
-            $filteringParams[] = new EqualTo(
-                new Property('clinic_id'),
-                new StringValue(strval($clinic_id))
-            );
-        }
-        $filters = new Filters(...$filteringParams);
         $request = $this->httpClient->request(
             'GET',
-            uri("timesheet")->asString(),
-            [
-                "query" => $filters->asKeyValue()
-            ]
+            uri("user")->asString()
+        );
+        $result = json_decode(
+            strval(
+                $request->getBody()
+            ),
+            true
+        );
+        return $result;
+    }
+
+    /**
+     * @int $id
+     * @return array{success:bool}
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    public function byId(int $id): array
+    {
+        $request = $this->httpClient->request(
+            'GET',
+            uri("user")->asString() . '/' . $id
         );
         $result = json_decode(
             strval(

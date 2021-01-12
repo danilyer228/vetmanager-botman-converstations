@@ -1,6 +1,6 @@
 <?php
 
-namespace Otis22\VetmanagerConversations\Schedules;
+namespace Otis22\VetmanagerConversations\Helpers;
 
 use GuzzleHttp\Client;
 use PHPUnit\Framework\TestCase;
@@ -31,6 +31,7 @@ class SchedulesTest extends TestCase
                 'headers' => byToken('app', $token->asString())->asKeyValue()
             ]
         );
+        var_dump(byToken('app', $token->asString())->asKeyValue());
         $schedules = new Schedules($token, $client);
         $result = $schedules->byIntervalInDays(2);
         $this->assertTrue($result['success']);
