@@ -4,12 +4,6 @@ namespace Otis22\VetmanagerConversations\Helpers;
 
 use GuzzleHttp\Client;
 use Otis22\VetmanagerToken\Token;
-use Otis22\VetmanagerRestApi\Query\Filter\MoreThan;
-use Otis22\VetmanagerRestApi\Query\Filter\LessThan;
-use Otis22\VetmanagerRestApi\Model\Property;
-use Otis22\VetmanagerRestApi\Query\Filter\Value\StringValue;
-use Otis22\VetmanagerRestApi\Query\Filter\EqualTo;
-use Otis22\VetmanagerRestApi\Query\Filters;
 
 use function Otis22\VetmanagerRestApi\uri;
 
